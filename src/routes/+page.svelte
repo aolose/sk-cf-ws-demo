@@ -20,9 +20,9 @@
     const connect = d(() => {
         times++
         status = 'connecting...'
+        if(ws)ws.onclose=ws.onerror=ws.onmessage=ws.onopen=null
         ws = new WebSocket(`ws${location.origin.slice(4)}/hello`)
-        ws.onclose = connect
-        ws.onerror = connect
+        ws.onerror = ws.onclose = connect
         ws.onopen = () => status = 'connected'
         ws.onmessage = ({data}) => {
             message = `${new Date().toLocaleTimeString()} ${data}\n` + message
