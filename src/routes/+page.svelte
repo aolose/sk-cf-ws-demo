@@ -11,11 +11,8 @@
     const connect = () => {
         status = 'connecting...'
         const ws = new WebSocket(`ws${location.origin.slice(4)}/hello`)
-        const onclose = () => {
-            if (!ws.OPEN) connect()
-        }
-        ws.onclose = onclose
-        ws.onerror = onclose
+        ws.onclose = connect
+        ws.onerror = connect
         ws.onopen = () => status = 'connected'
         ws.onmessage = ({data}) => {
             message = `${new Date().toLocaleTimeString()} ${data}\n` + message
