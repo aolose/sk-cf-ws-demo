@@ -8,33 +8,25 @@
 
     let send = () => {
     }
-    const d = (fn)=>{
-        let i
-        return ()=>{
-            clearTimeout(i)
-            i =setTimeout(fn,300)
-        }
-    }
 
     let ws
-    const connect = d(() => {
+    const connect = () => {
         times++
         status = 'connecting...'
         ws = new WebSocket(`ws${location.origin.slice(4)}/hello`)
-        ws.onclose = connect
+        ws.onclose = ()=>setTimeout(connect,200)
         ws.onopen = () => status = 'connected'
         ws.onmessage = ({data}) => {
             message = `${new Date().toLocaleTimeString()} ${data}\n` + message
         }
         send = function (e) {
-            if (e.type === 'keydown' && e.key !== 'Enter') return
-            if (value && status==='connected') ws.send(value)
+            if (!value || status!=='connected'|| e.type === 'keydown' && e.key !== 'Enter') return
+            ws.send(value)
             value = ''
             e.target.nextElementSibling.focus()
         }
-        return () => ws.close()
-    })
-
+        return ()=>ws.close()
+    }
     onMount(connect)
 </script>
 <h1>Sveltekit Cloudflare Websocket Test</h1>
