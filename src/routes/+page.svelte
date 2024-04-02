@@ -28,7 +28,7 @@
         }
         send = function (e) {
             if (e.type === 'keydown' && e.key !== 'Enter') return
-            if (value && ws.OPEN) ws.send(value)
+            if (value && status==='connected') ws.send(value)
             value = ''
             e.target.nextElementSibling.focus()
         }
