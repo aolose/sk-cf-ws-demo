@@ -61,5 +61,6 @@
         background: #f0f0f0;
         border: 1px solid rgba(0, 0, 0, .2);
         white-space: pre;
+        overflow: auto;
     }
 </style>
