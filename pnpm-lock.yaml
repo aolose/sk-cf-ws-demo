@@ -27,8 +27,8 @@ devDependencies:
     specifier: ^5.0.3
     version: 5.2.7
   vite-sveltekit-cf-ws:
-    specifier: ^0.2.2
-    version: 0.2.2
+    specifier: ^0.2.4
+    version: 0.2.4
 
 packages:
 
@@ -1937,8 +1937,8 @@ packages:
       '@fastify/busboy': 2.1.1
     dev: true
 
-  /vite-sveltekit-cf-ws@0.2.2:
-    resolution: {integrity: sha512-YzWGwi0U43bE5zFOMD5d3tmnwG3Ico1ttLvRC3oSnL1jtEByysl+/Ibb6NG6IK361zY+k+Z4VgZ1YfXXCv31eQ==}
+  /vite-sveltekit-cf-ws@0.2.4:
+    resolution: {integrity: sha512-YqIRvVgsAdW3R5k86iDAMOVeNSWedY1WhJH52RZ61liRhjhOwqvkJZ1D5A3JqJqgoqwUgIqIMJJnInrFMumehQ==}
     dev: true
 
   /vite@5.2.7:
