@@ -1,5 +1,8 @@
+### NOTE: Multiple websockets for cloudflare workers are currently not supported in this plugin (need support Durable Object)
 
 # sk-cf-ws-demo
+dev screenshot
+
 ![screenshot](screenshot.png)
 
 ### Use sveltekit to build a cloudflare page width websocket.
