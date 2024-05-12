@@ -1,5 +1,6 @@
 
 # sk-cf-ws-demo
+![screenshot](screenshot.png)
 
 ### Use sveltekit to build a cloudflare page width websocket.
 
